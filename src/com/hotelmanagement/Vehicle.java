@@ -60,4 +60,14 @@ public class Vehicle
     {
         this.vehicleType = vehicleType;
     }
+
+    public String printVehicleInfo()
+    {
+        String carYear = this.year.toString();
+        String vehicleType = this.vehicleType.toString();
+
+        return "Make:  " + this.make + "\n" + "Model: "
+            + this.model + "\n" + "Year: " + carYear + "\n" + vehicleType +
+            "\n";
+    }
 }

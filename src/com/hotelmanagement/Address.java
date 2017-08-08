@@ -16,7 +16,7 @@ public class Address
     }
 
     public Address(Integer streetNumber, String streetName, String city,
-                   String state, Integer zipCode, Integer unitNumber)
+                   String state, Integer zipCode)
     {
         this.streetNumber = streetNumber;
         this.streetName = streetName;
@@ -84,5 +84,19 @@ public class Address
     public void setUnitNumber(Integer unitNumber)
     {
         this.unitNumber = unitNumber;
+    }
+
+    public String printAddressInfo()
+    {
+        String streetNumer = this.streetNumber.toString();
+        String zipCode = this.zipCode.toString();
+        String unitNumber = this.unitNumber.toString();
+
+        String addressInfo = "Street Number:  " + streetNumer + "\n" + "Street Name: "
+                + this.streetName + "\n" + "City: " + this.city + "\n" + "State: " +
+                this.state + "\n" + "Zip Code: " + zipCode + "\n" + "Unit Number: " + unitNumber +
+                "\n";
+
+        return addressInfo;
     }
 }

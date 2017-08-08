@@ -22,8 +22,10 @@ public class Email implements ContactInformation
 
 
     @Override
-    public void printContactInfo()
+    public String getContactInfo()
     {
-        System.out.println("Email Address: " + this.emailAddress);
+        String contactInfo = "Email Address: " + this.emailAddress;
+
+        return contactInfo;
     }
 }
