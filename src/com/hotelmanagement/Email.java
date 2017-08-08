@@ -4,10 +4,6 @@ public class Email implements ContactInformation
 {
     private String emailAddress;
 
-    public Email ()
-    {
-
-    }
 
     public Email(String emailAddress)
     {

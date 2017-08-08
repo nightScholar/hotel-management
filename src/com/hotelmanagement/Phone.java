@@ -6,10 +6,6 @@ public class Phone implements ContactInformation
     private PhoneType phoneType;
     private Boolean hasTextAlerts;
 
-    public Phone()
-    {
-
-    }
 
     public Phone(String phoneNumber, PhoneType phoneType, Boolean hasTextAlerts)
     {
