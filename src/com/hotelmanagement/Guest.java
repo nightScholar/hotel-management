@@ -66,4 +66,14 @@ public class Guest
         contactInformationList.add(contactInformation);
     }
 
+    public void addVehicleToGarage(Vehicle vehicle, Garage garage)
+    {
+        garage.getVehicleList().add(vehicle);
+    }
+
+    public void removeVehicleFromGarage(Vehicle vehicle, Garage garage)
+    {
+        garage.getVehicleList().remove(vehicle);
+    }
+
 }
