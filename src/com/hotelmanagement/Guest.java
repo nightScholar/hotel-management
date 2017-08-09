@@ -1,7 +1,9 @@
 package com.hotelmanagement;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Random;
 
 public class Guest
 {
@@ -10,8 +12,11 @@ public class Guest
     private Address address;
     private Vehicle vehicle;
     private RoomType roomType;
+    private Random random = new Random();
+    private final Integer reservationId = random.nextInt(999);
     private ContactInformation contactInformation;
     private List<ContactInformation> contactInformationList;
+
 
 
     public Guest(String firstName, String lastName, Address address, ContactInformation contactInformation)
@@ -53,6 +58,36 @@ public class Guest
         return this.vehicle;
     }
 
+    public void setVehicle(Vehicle vehicle)
+    {
+        this.vehicle = vehicle;
+    }
+
+    public Integer getReservationId()
+    {
+        return reservationId;
+    }
+
+    public RoomType getRoomType()
+    {
+        return roomType;
+    }
+
+    public void setRoomType(RoomType roomType)
+    {
+        this.roomType = roomType;
+    }
+
+    public ContactInformation getContactInformation()
+    {
+        return contactInformation;
+    }
+
+    public void setContactInformation(ContactInformation contactInformation)
+    {
+        this.contactInformation = contactInformation;
+    }
+
     public void printContactInfo()
     {
         for(ContactInformation contact : contactInformationList)
@@ -66,14 +101,19 @@ public class Guest
         contactInformationList.add(contactInformation);
     }
 
-    public void addVehicleToGarage(Vehicle vehicle, Garage garage)
+    public void addVehicleToGarage(Garage garage)
     {
         garage.getVehicleList().add(vehicle);
     }
 
-    public void removeVehicleFromGarage(Vehicle vehicle, Garage garage)
+    public void removeVehicleFromGarage(Garage garage)
     {
         garage.getVehicleList().remove(vehicle);
+    }
+
+    public void makeReservation(Building building, GregorianCalendar calendar)
+    {
+
     }
 
 }
