@@ -1,4 +1,6 @@
-package com.hotelmanagement;
+package com.hotelmanagement.model.building;
+
+import com.hotelmanagement.model.customer.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;

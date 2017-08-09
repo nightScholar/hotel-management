@@ -1,4 +1,4 @@
-package com.hotelmanagement;
+package com.hotelmanagement.model.customer;
 
 public enum VehicleType
 {

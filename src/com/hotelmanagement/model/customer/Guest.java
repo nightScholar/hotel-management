@@ -1,4 +1,8 @@
-package com.hotelmanagement;
+package com.hotelmanagement.model.customer;
+
+import com.hotelmanagement.model.building.Building;
+import com.hotelmanagement.model.building.Garage;
+import com.hotelmanagement.model.building.RoomType;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;

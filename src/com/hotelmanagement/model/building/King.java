@@ -1,9 +1,11 @@
-package com.hotelmanagement;
+package com.hotelmanagement.model.building;
+
+import com.hotelmanagement.model.building.item.Amenities;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Queen implements RoomType
+public class King implements RoomType
 {
     private double price;
     private int bedsInRoom;
@@ -12,14 +14,13 @@ public class Queen implements RoomType
     private static int roomNumber = 0;
 
 
-    public Queen()
+    public King()
     {
-        price = 130.00;
+        price = 170.00;
         bedsInRoom = 1;
         amenitiesList = new ArrayList<>();
         roomNumber++;
     }
-
 
     @Override
     public List<Amenities> getAmenitiesList()
@@ -30,17 +31,18 @@ public class Queen implements RoomType
     @Override
     public double getPrice()
     {
-        return 0;
+        return price;
     }
 
     @Override
     public int getBedsInRoom()
     {
-        return 0;
+        return bedsInRoom;
     }
 
     public static int getRoomNumber()
     {
         return roomNumber;
     }
+
 }

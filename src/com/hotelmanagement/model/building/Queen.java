@@ -1,9 +1,11 @@
-package com.hotelmanagement;
+package com.hotelmanagement.model.building;
+
+import com.hotelmanagement.model.building.item.Amenities;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoubleBed implements RoomType
+public class Queen implements RoomType
 {
     private double price;
     private int bedsInRoom;
@@ -12,10 +14,10 @@ public class DoubleBed implements RoomType
     private static int roomNumber = 0;
 
 
-    public DoubleBed()
+    public Queen()
     {
-        price = 90.00;
-        bedsInRoom = 2;
+        price = 130.00;
+        bedsInRoom = 1;
         amenitiesList = new ArrayList<>();
         roomNumber++;
     }

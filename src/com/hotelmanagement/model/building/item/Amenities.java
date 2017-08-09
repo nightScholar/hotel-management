@@ -1,4 +1,4 @@
-package com.hotelmanagement;
+package com.hotelmanagement.model.building.item;
 
 public interface Amenities
 {
