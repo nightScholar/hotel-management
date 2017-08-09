@@ -3,7 +3,7 @@ package com.hotelmanagement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class King implements RoomType
+public class DoubleBed implements RoomType
 {
     private double price;
     private int bedsInRoom;
@@ -12,13 +12,14 @@ public class King implements RoomType
     private static int roomNumber = 0;
 
 
-    public King()
+    public DoubleBed()
     {
-        price = 170.00;
-        bedsInRoom = 1;
+        price = 90.00;
+        bedsInRoom = 2;
         amenitiesList = new ArrayList<>();
         roomNumber++;
     }
+
 
     @Override
     public List<Amenities> getAmenitiesList()
@@ -29,18 +30,17 @@ public class King implements RoomType
     @Override
     public double getPrice()
     {
-        return price;
+        return 0;
     }
 
     @Override
     public int getBedsInRoom()
     {
-        return bedsInRoom;
+        return 0;
     }
 
     public static int getRoomNumber()
     {
         return roomNumber;
     }
-
 }

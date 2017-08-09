@@ -12,11 +12,11 @@ public class Guest
     private Address address;
     private Vehicle vehicle;
     private RoomType roomType;
-    private Random random = new Random();
-    private final Integer reservationId = random.nextInt(999);
     private ContactInformation contactInformation;
     private List<ContactInformation> contactInformationList;
 
+    private Random random = new Random();
+    private final Integer reservationId = random.nextInt(999);
 
 
     public Guest(String firstName, String lastName, Address address, ContactInformation contactInformation)

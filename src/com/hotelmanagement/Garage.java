@@ -9,11 +9,6 @@ public class Garage
     private List<Vehicle> vehicleList;
 
 
-    public Garage()
-    {
-
-    }
-
     public Garage(String name)
     {
         this.name = name;
@@ -25,10 +20,6 @@ public class Garage
         return name;
     }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
 
     public List<Vehicle> getVehicleList()
     {
