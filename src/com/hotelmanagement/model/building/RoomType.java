@@ -7,6 +7,7 @@ import java.util.List;
 public interface RoomType
 {
     List<Amenities> getAmenitiesList();
+    void printAmenities();
     double getPrice();
     int getBedsInRoom();
 }

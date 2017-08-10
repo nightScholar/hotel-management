@@ -1,6 +1,4 @@
-package com.hotelmanagement.model.building;
-
-import com.hotelmanagement.model.building.item.Amenities;
+package com.hotelmanagement.model.building.item;
 
 public class AirConditioner implements Amenities
 {
