@@ -1,13 +1,14 @@
 package com.hotelmanagement.model.building;
 
-import com.hotelmanagement.model.building.item.Amenities;
+import com.hotelmanagement.model.item.Amenities;
 
 import java.util.List;
 
-public interface RoomType
+public interface RoomTypes
 {
     List<Amenities> getAmenitiesList();
     void printAmenities();
     double getPrice();
     int getBedsInRoom();
+    BedType getBedType();
 }

@@ -2,7 +2,7 @@ package com.hotelmanagement.model.customer;
 
 import com.hotelmanagement.model.building.Building;
 import com.hotelmanagement.model.building.Garage;
-import com.hotelmanagement.model.building.RoomType;
+import com.hotelmanagement.model.building.RoomTypes;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -15,7 +15,7 @@ public class Guest
     private String lastName;
     private Address address;
     private Vehicle vehicle;
-    private RoomType roomType;
+    private RoomTypes roomType;
     private ContactInformation contactInformation;
     private List<ContactInformation> contactInformationList;
 
@@ -72,12 +72,12 @@ public class Guest
         return reservationId;
     }
 
-    public RoomType getRoomType()
+    public RoomTypes getRoomType()
     {
         return roomType;
     }
 
-    public void setRoomType(RoomType roomType)
+    public void setRoomType(RoomTypes roomType)
     {
         this.roomType = roomType;
     }

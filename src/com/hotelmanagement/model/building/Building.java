@@ -7,7 +7,7 @@ public class Building
 {
     private String name;
     private int buildingNumber;
-    private List<RoomType> roomTypeList;
+    private List<RoomTypes> roomTypeList;
     private Garage garage;
 
 
@@ -44,7 +44,7 @@ public class Building
         return garage;
     }
 
-    public void addRoomToList(RoomType roomType)
+    public void addRoomToList(RoomTypes roomType)
     {
         /*
         * Need to set a condition that does not allow a Building to add more rooms
@@ -53,7 +53,7 @@ public class Building
         roomTypeList.add(roomType);
     }
 
-    public void removeRoomFromList(RoomType roomType)
+    public void removeRoomFromList(RoomTypes roomType)
     {
         /*
         * will first need to check and make sure the total number of that room type is not zero.
