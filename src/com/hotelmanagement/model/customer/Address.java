@@ -86,17 +86,12 @@ public class Address
         this.unitNumber = unitNumber;
     }
 
-    public String printAddressInfo()
-    {
-        String streetNumer = this.streetNumber.toString();
-        String zipCode = this.zipCode.toString();
-        String unitNumber = this.unitNumber.toString();
 
-        String addressInfo = "Street Number:  " + streetNumer + "\n" + "Street Name: "
+    public void printAddressInfo()
+    {
+        System.out.print("Street Number:  " + streetNumber + "\n" + "Street Name: "
                 + this.streetName + "\n" + "City: " + this.city + "\n" + "State: " +
                 this.state + "\n" + "Zip Code: " + zipCode + "\n" + "Unit Number: " + unitNumber +
-                "\n";
-
-        return addressInfo;
+                "\n");
     }
 }

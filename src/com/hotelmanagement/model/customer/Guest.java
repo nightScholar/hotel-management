@@ -96,7 +96,7 @@ public class Guest
     {
         for(ContactInformation contact : contactInformationList)
         {
-            System.out.println(contact.getContactInfo());
+            System.out.println(contact.printContactInfo());
         }
     }
 
@@ -107,12 +107,41 @@ public class Guest
 
     public void addVehicleToGarage(Garage garage)
     {
-        garage.getVehicleList().add(vehicle);
+        try
+        {
+            if(garage.getVehicleList().size() > garage.getCapacity())
+            {
+                throw new IllegalStateException();
+            }
+            else
+            {
+                garage.getVehicleList().add(this.vehicle);
+            }
+        }
+        catch (IllegalStateException exception)
+        {
+            System.out.println(garage.getName() + " Garage has reached its maximum capacity," +
+                    "no more vehicles can be added");
+        }
     }
 
     public void removeVehicleFromGarage(Garage garage)
     {
-        garage.getVehicleList().remove(vehicle);
+        try
+        {
+            if(garage.getVehicleList().size() == 0)
+            {
+                throw new IllegalStateException();
+            }
+            else
+            {
+                garage.getVehicleList().remove(this.vehicle);
+            }
+        }
+        catch (IllegalStateException exception)
+        {
+            System.out.println(garage.getName() + " Garage does not have any vehicles to remove");
+        }
     }
 
     public void makeReservation(Building building, GregorianCalendar calendar)

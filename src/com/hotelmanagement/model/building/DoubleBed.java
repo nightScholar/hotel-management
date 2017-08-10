@@ -1,6 +1,5 @@
 package com.hotelmanagement.model.building;
 
-import com.hotelmanagement.model.building.item.*;
 import com.hotelmanagement.model.item.*;
 
 import java.util.ArrayList;

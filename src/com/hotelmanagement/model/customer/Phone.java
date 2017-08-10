@@ -46,15 +46,10 @@ public class Phone implements ContactInformation
 
 
     @Override
-    public String getContactInfo()
+    public void printContactInfo()
     {
-        String phoneType = this.phoneType.toString();
-        String hasTextAlerts = this.hasTextAlerts.toString();
-
-        String contactInfo = "Phone Number: " + this.phoneNumber + "\n" + "Phone Type: "
+        System.out.println("Phone Number: " + this.phoneNumber + "\n" + "Phone Type: "
                 + phoneType + "\n" + "Text Alerts Enabled: " + hasTextAlerts +
-                "\n";
-
-        return contactInfo;
+                "\n");
     }
 }

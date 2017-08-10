@@ -1,23 +1,30 @@
 package com.hotelmanagement.model.building;
 
+import com.hotelmanagement.model.customer.Address;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Building
+public class Complex
 {
     private String name;
-    private int buildingNumber;
-    private int capacity = 60;
-    private List<RoomTypes> roomTypeList;
-    private Garage garage;
+    private Address address;
+    private Building building;
+    private int capacity = 10;
+    private List<Building> buildingList;
 
 
-    public Building(String name, int buildingNumber, Garage garage)
+    public Complex()
+    {
+
+    }
+
+    public Complex(String name, Address address, Building building)
     {
         this.name = name;
-        this.buildingNumber = buildingNumber;
-        this.garage = garage;
-        roomTypeList = new ArrayList<>();
+        this.address = address;
+        this.building = building;
+        buildingList = new ArrayList<>();
     }
 
     public String getName()
@@ -30,32 +37,39 @@ public class Building
         this.name = name;
     }
 
-    public int getBuildingNumber()
+    public Address getAddress()
     {
-        return buildingNumber;
+        return address;
     }
 
-    public void setBuildingNumber(int buildingNumber)
+
+    public Building getBuilding()
     {
-        this.buildingNumber = buildingNumber;
+        return building;
     }
 
-    public Garage getGarage()
+    public int getCapacity()
     {
-        return garage;
+        return capacity;
     }
 
-    public void addRoom(RoomTypes roomType)
+
+    public List<Building> getBuildingList()
+    {
+        return buildingList;
+    }
+
+    public void addBuilding(Building building)
     {
         try
         {
-            if(roomTypeList.size() > this.capacity)
+            if(buildingList.size() > this.capacity)
             {
                 throw new IllegalStateException();
             }
             else
             {
-                roomTypeList.add(roomType);
+                buildingList.add(building);
             }
         }
         catch (IllegalStateException exception)
@@ -65,17 +79,17 @@ public class Building
         }
     }
 
-    public void removeRoom(RoomTypes roomType)
+    public void removeBuilding(Building building)
     {
         try
         {
-            if(roomTypeList.size() == 0)
+            if(buildingList.size() == 0)
             {
                 throw new IllegalStateException();
             }
             else
             {
-                roomTypeList.remove(roomType);
+                buildingList.remove(building);
             }
         }
         catch (IllegalStateException exception)

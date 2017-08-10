@@ -8,6 +8,7 @@ import java.util.List;
 public class Garage
 {
     private String name;
+    private int capacity = 70;
     private List<Vehicle> vehicleList;
 
 
@@ -20,6 +21,11 @@ public class Garage
     public String getName()
     {
         return name;
+    }
+
+    public int getCapacity()
+    {
+        return this.capacity;
     }
 
 
