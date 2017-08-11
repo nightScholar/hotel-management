@@ -37,7 +37,7 @@ public class King implements RoomType
     @Override
     public List<Amenities> getAmenitiesList()
     {
-        return null;
+        return amenitiesList;
     }
 
     @Override
@@ -58,6 +58,7 @@ public class King implements RoomType
         return bedType;
     }
 
+    @Override
     public void printAmenities()
     {
         System.out.println("Amenities: " + "\n");

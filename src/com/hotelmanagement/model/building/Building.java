@@ -35,6 +35,11 @@ public class Building
         return buildingNumber;
     }
 
+    public int getCapacity()
+    {
+        return capacity;
+    }
+
     public void setBuildingNumber(int buildingNumber)
     {
         this.buildingNumber = buildingNumber;
@@ -65,8 +70,8 @@ public class Building
         }
         catch (IllegalStateException exception)
         {
-            System.out.println(this.name + " Complex has reached its maximum capacity," +
-                    "no more buildings can be added");
+            System.out.println(this.name + " Building has reached its maximum capacity," +
+                    "no more rooms can be added");
         }
     }
 
@@ -85,7 +90,8 @@ public class Building
         }
         catch (IllegalStateException exception)
         {
-            System.out.println(this.name + " Complex does not have any buildings to remove");
+            System.out.println(this.name + " Building does not have any rooms " +
+                    "to remove ");
         }
     }
 

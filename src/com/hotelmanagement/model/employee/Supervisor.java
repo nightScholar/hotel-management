@@ -45,7 +45,7 @@ public class Supervisor extends FullTimeEmployee implements Benefits
     }
 
     /*
-    * Overridden from abstract FullTimeEmployee class
+    * Overridden from FullTimeEmployee class
     * */
 
     @Override

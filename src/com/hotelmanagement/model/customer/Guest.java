@@ -23,6 +23,11 @@ public class Guest
     private final Integer reservationId = random.nextInt(999);
 
 
+    public Guest()
+    {
+
+    }
+
     public Guest(String firstName, String lastName, Address address, ContactInformation contactInformation)
     {
         this.firstName = firstName;
@@ -156,12 +161,26 @@ public class Guest
 
     public void makeReservation(Building building, RoomType roomType, Reservation reservation)
     {
-        /*
-        * Need to compare dates using the calendar in Reservation class.
-        * */
+        try
+        {
+            if(building.getRoomTypeList().size() == building.getCapacity())
+            {
+               throw new IllegalStateException();
+            }
+            else
+            {
+                building.getRoomTypeList().remove(roomType);
+            }
+        }
+        catch (IllegalStateException exception)
+        {
+            System.out.println("Sorry, there are no more rooms " +
+                    "available to reserve. Please check back soon!");
+        }
 
-        building.getRoomTypeList().add(roomType);
         reservation.setReservationNumber(this.reservationId);
+        reservation.setBuildingName(building.getName());
+        reservation.setRoomType(roomType.getBedType().toString());
     }
 
 }

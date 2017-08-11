@@ -1,17 +1,21 @@
 package com.hotelmanagement.model.customer;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Reservation
 {
     private Integer reservationNumber;
-    private GregorianCalendar calendar;
+    private GregorianCalendar checkInDate;
+    private GregorianCalendar checkOutDate;
+    private String buildingName;
+    private String roomType;
 
 
-    public Reservation(Integer reservationNumber, GregorianCalendar calendar)
+    public Reservation()
     {
-        this.reservationNumber = reservationNumber;
-        this.calendar = calendar;
+        checkInDate = new GregorianCalendar();
+        checkOutDate = new GregorianCalendar(2017, 7, 14);
     }
 
     public Integer getReservationNumber()
@@ -24,13 +28,76 @@ public class Reservation
         this.reservationNumber = reservationNumber;
     }
 
-    public GregorianCalendar getCalendar()
+    public GregorianCalendar getCheckInDate()
     {
-        return calendar;
+        return checkInDate;
     }
 
-    public void setCalendar(GregorianCalendar calendar)
+    public void setCheckInDate(GregorianCalendar checkInDate)
     {
-        this.calendar = calendar;
+        this.checkInDate = checkInDate;
+    }
+
+    public GregorianCalendar getCheckOutDate()
+    {
+        return checkOutDate;
+    }
+
+    public void setCheckOutDate(GregorianCalendar checkOutDate)
+    {
+        this.checkOutDate = checkOutDate;
+    }
+
+    public String getBuildingName()
+    {
+        return buildingName;
+    }
+
+    public void setBuildingName(String buildingName)
+    {
+        this.buildingName = buildingName;
+    }
+
+    public String getRoomType()
+    {
+        return roomType;
+    }
+
+    public void setRoomType(String roomType)
+    {
+        this.roomType = roomType;
+    }
+
+    public void convertCalendrMonthToString(GregorianCalendar calendar)
+    {
+        switch (calendar.get(Calendar.MONTH))
+        {
+            case 0: System.out.print("January");
+                break;
+            case 1: System.out.print("February");
+                break;
+            case 2: System.out.print("March");
+                break;
+            case 3: System.out.print("April");
+                break;
+            case 4: System.out.print("May");
+                break;
+            case 5: System.out.print("June");
+                break;
+            case 6: System.out.print("July");
+                break;
+            case 7: System.out.print("August");
+                break;
+            case 8: System.out.print("September");
+                break;
+            case 9: System.out.print("October");
+                break;
+            case 10: System.out.print("November");
+                break;
+            case 11: System.out.print("December");
+                break;
+            default: System.out.println("Error: invalid status");
+                System.exit(1);
+        }
     }
 }
