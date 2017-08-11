@@ -8,7 +8,7 @@ public class Building
     private String name;
     private int buildingNumber;
     private int capacity = 60;
-    private List<RoomTypes> roomTypeList;
+    private List<RoomType> roomTypeList;
     private Garage garage;
 
 
@@ -40,12 +40,17 @@ public class Building
         this.buildingNumber = buildingNumber;
     }
 
+    public List<RoomType> getRoomTypeList()
+    {
+        return roomTypeList;
+    }
+
     public Garage getGarage()
     {
         return garage;
     }
 
-    public void addRoom(RoomTypes roomType)
+    public void addRoom(RoomType roomType)
     {
         try
         {
@@ -65,7 +70,7 @@ public class Building
         }
     }
 
-    public void removeRoom(RoomTypes roomType)
+    public void removeRoom(RoomType roomType)
     {
         try
         {

@@ -2,10 +2,9 @@ package com.hotelmanagement.model.customer;
 
 import com.hotelmanagement.model.building.Building;
 import com.hotelmanagement.model.building.Garage;
-import com.hotelmanagement.model.building.RoomTypes;
+import com.hotelmanagement.model.building.RoomType;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Random;
 
@@ -15,8 +14,9 @@ public class Guest
     private String lastName;
     private Address address;
     private Vehicle vehicle;
-    private RoomTypes roomType;
+    private RoomType roomType;
     private ContactInformation contactInformation;
+    private Reservation reservation;
     private List<ContactInformation> contactInformationList;
 
     private Random random = new Random();
@@ -72,12 +72,12 @@ public class Guest
         return reservationId;
     }
 
-    public RoomTypes getRoomType()
+    public RoomType getRoomType()
     {
         return roomType;
     }
 
-    public void setRoomType(RoomTypes roomType)
+    public void setRoomType(RoomType roomType)
     {
         this.roomType = roomType;
     }
@@ -92,11 +92,21 @@ public class Guest
         this.contactInformation = contactInformation;
     }
 
+    public Reservation getReservation()
+    {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation)
+    {
+        this.reservation = reservation;
+    }
+
     public void printContactInfo()
     {
         for(ContactInformation contact : contactInformationList)
         {
-            System.out.println(contact.printContactInfo());
+            contact.printContactInfo();
         }
     }
 
@@ -144,9 +154,14 @@ public class Guest
         }
     }
 
-    public void makeReservation(Building building, GregorianCalendar calendar)
+    public void makeReservation(Building building, RoomType roomType, Reservation reservation)
     {
+        /*
+        * Need to compare dates using the calendar in Reservation class.
+        * */
 
+        building.getRoomTypeList().add(roomType);
+        reservation.setReservationNumber(this.reservationId);
     }
 
 }

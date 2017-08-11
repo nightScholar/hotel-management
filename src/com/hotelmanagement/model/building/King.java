@@ -5,7 +5,7 @@ import com.hotelmanagement.model.item.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class King implements RoomTypes
+public class King implements RoomType
 {
     private double price = 170.00;
     private int bedsInRoom = 1;

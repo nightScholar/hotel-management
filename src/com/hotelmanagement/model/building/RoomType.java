@@ -4,7 +4,7 @@ import com.hotelmanagement.model.item.Amenities;
 
 import java.util.List;
 
-public interface RoomTypes
+public interface RoomType
 {
     List<Amenities> getAmenitiesList();
     void printAmenities();

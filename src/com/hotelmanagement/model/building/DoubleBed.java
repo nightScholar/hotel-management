@@ -5,7 +5,7 @@ import com.hotelmanagement.model.item.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoubleBed implements RoomTypes
+public class DoubleBed implements RoomType
 {
     private double price = 90.00;
     private int bedsInRoom = 2;
