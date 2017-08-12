@@ -1,11 +1,9 @@
 package com.hotelmanagement.model.employee;
 
 import com.hotelmanagement.model.building.Building;
-import com.hotelmanagement.model.building.RoomType;
 import com.hotelmanagement.model.customer.Guest;
 
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Supervisor extends FullTimeEmployee implements Benefits
 {
@@ -13,15 +11,19 @@ public class Supervisor extends FullTimeEmployee implements Benefits
     private String lastName;
     private boolean isMarried;
     private Building building;
-    private Map<Guest, RoomType> guestRoomMap;
+    private Map<List<String>, Integer> guestRoomMap;
+    private List<Employee> employeeList;
 
     private Random random = new Random();
     private final Integer idNumber = random.nextInt(999);
 
 
-    public Supervisor(String firstName, String lastName)
+    public Supervisor(String firstName, String lastName, Building building)
     {
         super(firstName, lastName);
+        this.building = building;
+        guestRoomMap = new HashMap<>();
+        employeeList = new ArrayList<>();
     }
 
     public Building getBuilding()
@@ -34,14 +36,29 @@ public class Supervisor extends FullTimeEmployee implements Benefits
         this.building = building;
     }
 
-    public Map<Guest, RoomType> getGuestRoomMap()
+    public Map<List<String>, Integer> getGuestRoomMap()
     {
         return guestRoomMap;
     }
 
-    public void setGuestRoomMap(Map<Guest, RoomType> guestRoomMap)
+    public List<Employee> getEmployeeList()
     {
-        this.guestRoomMap = guestRoomMap;
+        return employeeList;
+    }
+
+    public void printInvoice(Guest guest)
+    {
+
+    }
+
+    // Need to finish this method
+
+    public void addGuestToMapList(Guest guest)
+    {
+        for(Map.Entry<List<String>, Integer> entry : guestRoomMap.entrySet())
+        {
+
+        }
     }
 
     /*
@@ -111,6 +128,4 @@ public class Supervisor extends FullTimeEmployee implements Benefits
     {
         return true;
     }
-
-
 }
