@@ -1,6 +1,7 @@
 package com.hotelmanagement.model.employee;
 
 import com.hotelmanagement.model.building.Building;
+import com.hotelmanagement.model.building.Invoice;
 import com.hotelmanagement.model.customer.Guest;
 
 import java.util.*;
@@ -11,7 +12,7 @@ public class Supervisor extends FullTimeEmployee implements Benefits
     private String lastName;
     private boolean isMarried;
     private Building building;
-    private Map<List<String>, Integer> guestRoomMap;
+    private Map<String, Integer> guestMap;
     private List<Employee> employeeList;
 
     private Random random = new Random();
@@ -22,7 +23,7 @@ public class Supervisor extends FullTimeEmployee implements Benefits
     {
         super(firstName, lastName);
         this.building = building;
-        guestRoomMap = new HashMap<>();
+        guestMap = new HashMap<>();
         employeeList = new ArrayList<>();
     }
 
@@ -36,9 +37,9 @@ public class Supervisor extends FullTimeEmployee implements Benefits
         this.building = building;
     }
 
-    public Map<List<String>, Integer> getGuestRoomMap()
+    public Map<String, Integer> getGuestMap()
     {
-        return guestRoomMap;
+        return guestMap;
     }
 
     public List<Employee> getEmployeeList()
@@ -51,14 +52,66 @@ public class Supervisor extends FullTimeEmployee implements Benefits
 
     }
 
-    // Need to finish this method
 
-    public void addGuestToMapList(Guest guest)
+    public void addGuestToMap(Guest guest)
     {
-        for(Map.Entry<List<String>, Integer> entry : guestRoomMap.entrySet())
-        {
+       guestMap.put(guest.getFullName(), guest.getReservationId());
+    }
 
+    public void removeGuestFromMap(Guest guest)
+    {
+        guestMap.remove(guest.getFullName());
+    }
+
+    public void printGuestMap()
+    {
+        for(Map.Entry<String, Integer> keySet : guestMap.entrySet())
+        {
+            String key = keySet.getKey();
+            Integer value = keySet.getValue();
+
+            System.out.print("Name: " + key + ", " + "Reservation ID: "
+            + value + "\n");
         }
+    }
+
+    public void addEmployeeToList(Employee employee)
+    {
+        employeeList.add(employee);
+    }
+
+    public void removeEmployeeFromList(Employee employee)
+    {
+        employeeList.remove(employee);
+    }
+
+    public void printEmployeeInfo()
+    {
+        for(Employee employee : employeeList)
+        {
+            System.out.println(employee.getFirstName() +
+                    " " +  employee.getLastName());
+        }
+    }
+
+    public void printGuestInvoice(Guest guest)
+    {
+        //Need to look into refactoring this code
+
+        Invoice invoice = new Invoice();
+        invoice.setStreetNumber(guest.getAddress().getStreetNumber());
+        invoice.setStreetName(guest.getAddress().getStreetName());
+        invoice.setCity(guest.getAddress().getCity());
+        invoice.setState(guest.getAddress().getState());
+        invoice.setZipCode(guest.getAddress().getZipCode());
+        invoice.setUnitNumber(guest.getAddress().getUnitNumber());
+        invoice.setTotalPrice(guest.getRoomType().getPrice());
+        invoice.setRoomType(guest.getRoomType().getBedType().toString());
+
+        System.out.println(guest.getFullName() + "\n" + "***********" +
+                "\n" + "Reservation ID: " + guest.getReservationId());
+
+        System.out.println(invoice.formatInvoiceInfo());
     }
 
     /*

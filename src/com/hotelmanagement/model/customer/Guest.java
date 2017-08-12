@@ -57,6 +57,11 @@ public class Guest
         this.lastName = lastName;
     }
 
+    public String getFullName()
+    {
+        return firstName + " " + lastName;
+    }
+
     public Address getAddress()
     {
         return this.address;

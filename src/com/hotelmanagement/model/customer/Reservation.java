@@ -14,8 +14,13 @@ public class Reservation
 
     public Reservation()
     {
-        checkInDate = new GregorianCalendar();
-        checkOutDate = new GregorianCalendar(2017, 7, 14);
+
+    }
+
+    public Reservation(GregorianCalendar checkInDate, GregorianCalendar checkOutDate)
+    {
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
     }
 
     public Integer getReservationNumber()
