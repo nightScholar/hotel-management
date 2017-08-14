@@ -47,11 +47,6 @@ public class Supervisor extends FullTimeEmployee implements Benefits
         return employeeList;
     }
 
-    public void printInvoice(Guest guest)
-    {
-
-    }
-
 
     public void addGuestToMap(Guest guest)
     {

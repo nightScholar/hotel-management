@@ -1,5 +1,7 @@
 package com.hotelmanagement.model.building;
 
+import java.util.GregorianCalendar;
+
 public class Invoice
 {
     private Double totalPrice;
@@ -12,8 +14,8 @@ public class Invoice
     private Integer zipCode;
     private Integer unitNumber;
 
-    private Integer checkInDate;
-    private Integer checkOutDate;
+    private GregorianCalendar checkInDate;
+    private GregorianCalendar checkOutDate;
 
     private String roomType;
 
@@ -103,22 +105,22 @@ public class Invoice
         this.unitNumber = unitNumber;
     }
 
-    public Integer getCheckInDate()
+    public GregorianCalendar getCheckInDate()
     {
         return checkInDate;
     }
 
-    public void setCheckInDate(Integer checkInDate)
+    public void setCheckInDate(GregorianCalendar checkInDate)
     {
         this.checkInDate = checkInDate;
     }
 
-    public Integer getCheckOutDate()
+    public GregorianCalendar getCheckOutDate()
     {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(Integer checkOutDate)
+    public void setCheckOutDate(GregorianCalendar checkOutDate)
     {
         this.checkOutDate = checkOutDate;
     }
